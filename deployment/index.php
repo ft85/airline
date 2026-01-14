@@ -25,7 +25,7 @@ define('LARAVEL_START', microtime(true));
 | - ../airline-ticket-system (if that's your folder name)
 |
 */
-$laravelPath = __DIR__ . '/../laravel-app';
+$laravelPath = __DIR__ . '/laravel-app';
 
 /*
 |--------------------------------------------------------------------------
