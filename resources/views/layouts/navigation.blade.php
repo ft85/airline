@@ -25,6 +25,15 @@
                     <x-nav-link :href="route('invoices.index')" :active="request()->routeIs('invoices.*')">
                         {{ __('Invoices') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('expenses.index')" :active="request()->routeIs('expenses.*')">
+                        {{ __('Expenses') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('clients.index')" :active="request()->routeIs('clients.*')">
+                        {{ __('Clients') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('suppliers.index')" :active="request()->routeIs('suppliers.*')">
+                        {{ __('Suppliers') }}
+                    </x-nav-link>
                     
                     <!-- Reports Dropdown -->
                     <div class="relative h-full flex items-center" x-data="{ open: false }">
@@ -34,12 +43,16 @@
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
                         </button>
-                        <div x-show="open" @click.away="open = false" class="absolute z-50 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                        <div x-show="open" @click.away="open = false" class="absolute z-50 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 top-full">
                             <div class="py-1">
                                 <a href="{{ route('reports.daily') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Daily Report</a>
                                 <a href="{{ route('reports.customers') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Customer Report</a>
                                 <a href="{{ route('reports.airlines') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Airline Report</a>
                                 <a href="{{ route('reports.income') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Income Report</a>
+                                <hr class="my-1">
+                                <a href="{{ route('reports.expenses.daily') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Daily Expenses</a>
+                                <a href="{{ route('reports.receivables') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Client Receivables</a>
+                                <a href="{{ route('reports.payables') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Supplier Payables</a>
                             </div>
                         </div>
                     </div>

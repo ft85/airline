@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             AirlineSeeder::class,
+            CurrencySeeder::class,
+            ExpenseCategorySeeder::class,
         ]);
     }
 }
